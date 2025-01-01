@@ -4,14 +4,17 @@ const formulario = document.getElementById('login');
 let user = document.getElementById('user');
 let contrasenna = document.getElementById('password');
 
-//function
+//functions
+    //Ensure that the user and password are correct
 formulario.addEventListener('click', function(event){
     event.preventDefault()
 
-    if (user.value === 'user') {
-        divLogin.innerHTML += 'usuario correcto <br>';
+    if (user.value === 'user' && contrasenna.value === 'user') {
+        //Open calculadoraBasica.html
+        window.location.href = "../html/calculadoraBasica.html";
     }
-    if (contrasenna.value === 'user') {
-        divLogin.innerHTML += 'contraseña correcta';
-    }
+    else if(user.value === 'user' || contrasenna.value === 'user'){
+        //Error message
+        divLogin.innerHTML += 'Datos incorrectos, vuelva a introducir sus credenciales';
+    };
 });
